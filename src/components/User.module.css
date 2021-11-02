@@ -1,0 +1,67 @@
+.Wrapper {
+    flex: 1 20%;
+    max-width: 20%;
+    perspective: 1000px;
+    position: relative;
+    cursor: pointer;
+    min-width: 23%;
+    z-index: 1;
+}
+.Wrapper:hover > .User {
+    transform: rotateY(-15deg) rotateX(7deg);
+    outline-color: var(--red);
+}
+.Wrapper:hover > .User > .ImgWrapper > img {
+    transform: scale(1.1);
+    filter: grayscale(1);
+}
+
+.User {
+    position: relative;
+    border: 1px solid rgba(233, 30, 99, 0.5);
+    border-radius: 10px;
+    outline: 2px solid;
+    outline-color: transparent;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: all 0.5s ease;
+}
+.ImgWrapper {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+.ImgWrapper > img {
+    width: 100%;
+    height: 100%;
+    transition: all 2s;
+}
+.Content {
+    padding: 15px 10px;
+    font-family: montserrat-regular;
+}
+.Content > div:nth-child(2) {
+    text-align: center;
+    color: #B0003A;
+}
+.Sec {
+    color: var(--red);
+}
+.HighLighted {
+    animation: highlight 4s forwards;
+}
+@keyframes highlight {
+    0% {
+        color: var(--secondary);
+        text-decoration: underline;
+    }
+    75% {
+        color: var(--secondary);
+        text-decoration: underline;
+    }
+    to {
+        color: white;
+        text-decoration: none;
+    }
+}
